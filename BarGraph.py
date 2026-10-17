@@ -23,3 +23,19 @@ plt.ylabel("Frequency")
 plt.title("Frequency Distribution of Marks")
 plt.show()
 
+
+print("..................................................................................................")
+
+ages = [12, 14, 15, 17, 18, 19, 21, 22, 24, 26]
+
+# Ungrouped frequency
+print("Ungrouped:")
+print(pd.Series(ages).value_counts().sort_index())
+
+# Grouped frequency
+bins = [10, 15, 20, 25, 30]
+
+print("\nGrouped:")
+print(pd.cut(ages, bins=bins, right=False).value_counts().sort_index())
+
+
